@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Titanic — A Love Story. A scroll-driven cinematic film tracing Jack and Rose's journey aboard the ship of dreams, April 1912." />
+  <meta name="theme-color" content="#060a12" />
+  <title>Titanic — A Love Story</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>" />
+</head>
+<body>
+
+  <a class="skip-link" href="#chapter-1">Skip to content</a>
+
+  <!-- == Preloader ================================================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__eyebrow">A Love Story · April 1912</span>
+      <span class="loader__title">Titanic</span>
+      <span class="loader__line"></span>
+    </div>
+  </div>
+
+  <!-- == Custom cursor ============================================= -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- == Scroll progress =========================================== -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- == Header ==================================================== -->
+  <header class="site-head" id="siteHead">
+    <span class="site-head__mark">⚓</span>
+    <span class="site-head__title">Titanic</span>
+    <nav class="site-head__nav" aria-label="Chapters">
+      <a href="#chapter-1">Boarding</a>
+      <a href="#reel">The Film</a>
+      <a href="#ending">Fin</a>
+    </nav>
+    <button class="sound-toggle" id="soundToggle" aria-pressed="false" aria-label="Toggle ocean sound">
+      <span class="sound-toggle__glyph" aria-hidden="true">≋</span>
+      <span class="sound-toggle__label">Sound</span>
+    </button>
+  </header>
+
+  <main id="main">
+
+    <!-- == Opening — hero (0–15%) =================================== -->
+    <section class="opening" id="opening" aria-label="Opening — the ship at sea">
+      <div class="opening__film" aria-hidden="true">
+        <img src="assets/film-hero.jpg" alt="" />
+      </div>
+      <canvas class="opening__canvas" id="openingOcean" aria-hidden="true"></canvas>
+      <div class="fog fog--one" aria-hidden="true"></div>
+      <div class="fog fog--two" aria-hidden="true"></div>
+
+      <div class="opening__content" id="openingContent">
+        <p class="opening__eyebrow reveal-now">White Star Line · April 1912</p>
+        <p class="opening__title" aria-label="Titanic">
+          <span class="opening__title-line"><span>T&thinsp;I&thinsp;T&thinsp;A&thinsp;N&thinsp;I&thinsp;C</span></span>
+        </p>
+        <blockquote class="opening__quote">
+          <span class="opening__quote-line"><span>“Nothing on Earth</span></span>
+          <span class="opening__quote-line"><span>could come between them.”</span></span>
+        </blockquote>
+        <button class="enter-btn" id="enterBtn">Enter&nbsp;Experience</button>
+      </div>
+    </section>
+
+    <!-- == Chapter I · Boarding ===================================== -->
+    <section class="board chapter" id="chapter-1" aria-labelledby="ch1-title">
+      <div class="chapter-head">
+        <span class="chapter-head__num reveal">Chapter I</span>
+        <h2 class="chapter-head__title reveal" id="ch1-title">Boarding the Titanic</h2>
+        <p class="chapter-head__sub reveal">The gangway at berth 44. Steam, brass bands, and the largest moving object ever made by man.</p>
+      </div>
+
+      <div class="board__pin">
+        <div class="board__track" id="boardTrack">
+
+          <article class="board-panel">
+            <div class="board-panel__media plx">
+              <img src="assets/titanic-1.png" alt="Titanic under way at sunset, portholes glowing across her black hull" loading="lazy" decoding="async" />
+            </div>
+            <div class="board-panel__caption">
+              <span class="board-panel__eyebrow">The Ship</span>
+              <p>Forty-six thousand tons of steel — and every light burning.</p>
+            </div>
+          </article>
+
+          <article class="board-panel board-panel--ticket">
+            <div class="ticket" id="ticket" tabindex="0" aria-label="Replica White Star Line boarding ticket, first class, Southampton to New York">
+              <div class="ticket__inner">
+                <header class="ticket__head">
+                  <span class="ticket__line">White Star Line</span>
+                  <span class="ticket__class">First Class</span>
+                </header>
+                <div class="ticket__body">
+                  <div class="ticket__field"><span class="ticket__label">Vessel</span><span class="ticket__value">R.M.S. Titanic</span></div>
+                  <div class="ticket__field"><span class="ticket__label">From</span><span class="ticket__value">Southampton</span></div>
+                  <div class="ticket__field"><span class="ticket__label">To</span><span class="ticket__value">New York</span></div>
+                  <div class="ticket__field"><span class="ticket__label">Departure</span><span class="ticket__value">April 10 — Noon</span></div>
+                  <div class="ticket__field"><span class="ticket__label">Berth</span><span class="ticket__value">B-52 · Promenade</span></div>
+                  <div class="ticket__field"><span class="ticket__label">Fare</span><span class="ticket__value">Won at poker</span></div>
+                </div>
+                <footer class="ticket__foot">
+                  <span>№ 041012</span>
+                  <span class="ticket__stamp">Embarked</span>
+                </footer>
+              </div>
+            </div>
+            <div class="board-panel__caption">
+              <span class="board-panel__eyebrow">The Ticket</span>
+              <p>“Winning that ticket was the best thing that ever happened to me.”</p>
+            </div>
+          </article>
+
+          <article class="board-panel">
+            <div class="board-panel__art">
+              <svg class="draw" viewBox="0 0 420 340" role="img" aria-label="Line drawing of stacked vintage steamer luggage">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="60" y="190" width="300" height="110" rx="8" />
+                  <line x1="60" y1="245" x2="360" y2="245" />
+                  <line x1="120" y1="190" x2="120" y2="300" />
+                  <line x1="300" y1="190" x2="300" y2="300" />
+                  <rect x="196" y="232" width="28" height="26" rx="3" />
+                  <rect x="96" y="118" width="228" height="72" rx="10" />
+                  <path d="M180 118 v-16 a10 10 0 0 1 10 -10 h40 a10 10 0 0 1 10 10 v16" />
+                  <line x1="132" y1="118" x2="132" y2="190" />
+                  <line x1="288" y1="118" x2="288" y2="190" />
+                  <ellipse cx="210" cy="96" rx="64" ry="14" />
+                  <path d="M146 96 v-30 a64 14 0 0 1 128 0 v30" />
+                  <path d="M324 150 l34 24 -8 30 -30 -12 z" />
+                  <circle cx="330" cy="158" r="3" />
+                </g>
+              </svg>
+            </div>
+            <div class="board-panel__caption">
+              <span class="board-panel__eyebrow">The Luggage</span>
+              <p>Trunks of silk and letters for a new world — or everything owned, in a single kit bag.</p>
+            </div>
+          </article>
+
+          <article class="board-panel">
+            <div class="board-panel__art">
+              <svg class="draw" viewBox="0 0 420 340" role="img" aria-label="Line drawing of the Grand Staircase beneath its glass dome">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M70 96 a140 140 0 0 1 280 0" />
+                  <path d="M96 96 a114 114 0 0 1 228 0" />
+                  <line x1="140" y1="30" x2="140" y2="86" />
+                  <line x1="210" y1="16" x2="210" y2="80" />
+                  <line x1="280" y1="30" x2="280" y2="86" />
+                  <circle cx="210" cy="130" r="22" />
+                  <line x1="210" y1="130" x2="210" y2="116" />
+                  <line x1="210" y1="130" x2="220" y2="134" />
+                  <line x1="110" y1="170" x2="310" y2="170" />
+                  <path d="M110 170 C 90 210 78 232 60 300" />
+                  <path d="M310 170 C 330 210 342 232 360 300" />
+                  <path d="M92 224 H 328" />
+                  <path d="M78 262 H 342" />
+                  <path d="M60 300 H 360" />
+                  <path d="M126 170 C 112 206 100 238 88 292" />
+                  <path d="M294 170 C 308 206 320 238 332 292" />
+                  <line x1="150" y1="170" x2="150" y2="188" />
+                  <line x1="270" y1="170" x2="270" y2="188" />
+                </g>
+              </svg>
+            </div>
+            <div class="board-panel__caption">
+              <span class="board-panel__eyebrow">The Grand Staircase</span>
+              <p>Oak and wrought iron beneath a dome of glass — six storeys of morning light.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- == The Reel — scroll-driven film (15–100%) ================== -->
+    <section class="reel" id="reel" aria-label="The film — Jack and Rose's story">
+      <div class="reel__viewport">
+        <div class="reel__strip" id="reelStrip">
+
+          <!-- Scene 1 · Jack Meets Rose (15–35%) -->
+          <article class="scene" id="scene-meet" aria-labelledby="scene-meet-title">
+            <div class="scene__stack" aria-hidden="true">
+              <img src="assets/film-rose.jpg" alt="" />
+              <img src="assets/film-captain.jpg" alt="" />
+              <img src="assets/scene.jpg" alt="" />
+            </div>
+            <canvas class="scene__particles" id="meetDust" aria-hidden="true"></canvas>
+            <div class="scene__shade" aria-hidden="true"></div>
+            <div class="scene__caption">
+              <span class="scene__eyebrow">Chapter II — April 10, 1912 · Southampton</span>
+              <h2 class="scene__title" id="scene-meet-title">Jack Meets Rose</h2>
+              <p class="scene__line">The real Titanic left Southampton at noon with 2,224 souls aboard — millionaires and emigrants, and a crew of nearly nine hundred.</p>
+              <p class="scene__line">In the film, one of them is Rose DeWitt Bukater — seventeen, first class, engaged to a man she does not love. Another is Jack Dawson, a penniless artist who wins his ticket in a poker game five minutes before she sails.</p>
+              <p class="scene__line">Two nights out, she runs for the stern rail. He talks her back from the edge.</p>
+              <p class="scene__line scene__line--quote">“You jump, I jump.”</p>
+            </div>
+          </article>
+
+          <!-- Scene 2 · Falling in Love (35–60%) -->
+          <article class="scene scene--warm" id="scene-love" aria-labelledby="scene-love-title">
+            <div class="scene__stack" aria-hidden="true">
+              <img src="assets/film-bow.jpg" alt="" />
+              <img src="assets/film-flying.jpg" alt="" />
+              <img src="assets/scene-2.jpg" alt="" />
+            </div>
+            <canvas class="scene__particles" id="loveDust" aria-hidden="true"></canvas>
+            <div class="scene__shade" aria-hidden="true"></div>
+            <div class="scene__caption">
+              <span class="scene__eyebrow">Chapter III — April 14 · The Last Sunset</span>
+              <h2 class="scene__title" id="scene-love-title">Falling in Love</h2>
+              <p class="scene__line">By the fourth day the Atlantic lay flat as glass, and the ship had sailed through six separate ice warnings without slowing.</p>
+              <p class="scene__line">At sunset Jack takes Rose to the bow, where the ocean has no edges. She steps onto the rail, closes her eyes, and opens her arms.</p>
+              <p class="scene__line scene__line--quote">“I'm flying, Jack.”</p>
+              <p class="scene__line">That evening she chooses him — third class, penniless, alive — over everything she was born into.</p>
+            </div>
+          </article>
+
+          <!-- Scene 3 · The Iceberg (60–80%) -->
+          <article class="scene scene--cold" id="scene-ice" aria-labelledby="scene-ice-title">
+            <div class="scene__stack" aria-hidden="true">
+              <img src="assets/film-iceberg.jpg" alt="" />
+            </div>
+            <div class="scene__shade" aria-hidden="true"></div>
+            <div class="scene__caption">
+              <span class="scene__eyebrow">Chapter IV — April 14 · 11:40 p.m. · 28°F</span>
+              <h2 class="scene__title" id="scene-ice-title">Iceberg, Right Ahead</h2>
+              <p class="scene__count"><span class="scene__seconds" id="seconds">37</span><span class="scene__seconds-label">seconds from sighting to steel</span></p>
+              <p class="scene__line">High in the crow's nest, lookout Frederick Fleet had no binoculars — the key to their locker had left the ship in Southampton.</p>
+              <p class="scene__line">The ice opened her starboard side along six of her sixteen compartments. She was built to survive four.</p>
+              <p class="scene__line scene__line--quote">“She's made of iron, sir. I assure you, she can sink. And she will.”</p>
+            </div>
+          </article>
+
+          <!-- Scene 4 · Never Let Go (80–100%) -->
+          <article class="scene scene--dark" id="scene-vow" aria-labelledby="scene-vow-title">
+            <div class="scene__stack" aria-hidden="true">
+              <img src="assets/film-neverletgo.jpg" alt="" />
+            </div>
+            <div class="scene__shade" aria-hidden="true"></div>
+            <canvas class="scene__particles" id="vowFrost" aria-hidden="true"></canvas>
+            <div class="scene__caption scene__caption--center">
+              <span class="scene__eyebrow">Chapter V — April 15 · 2:20 a.m.</span>
+              <h2 class="scene__title" id="scene-vow-title">Never Let Go</h2>
+              <p class="scene__line">The real ship broke in two and fell twelve thousand feet. Over fifteen hundred people went into water cold enough to kill in minutes — and the half-empty boats rowed back for six.</p>
+              <p class="scene__line">In the film, a floating door holds only one. Jack keeps Rose on it, and makes her promise him the rest of her life.</p>
+              <p class="scene__line scene__line--quote">“I'll never let go, Jack. I promise.”</p>
+              <p class="scene__line">At dawn the Carpathia lifted 706 survivors from the sea. Rose Dawson was among them.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="reel__cold" aria-hidden="true"></div>
+        <div class="reel__black" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- == Ending ==================================================== -->
+    <section class="ending" id="ending" aria-label="Ending">
+      <canvas class="ending__canvas" id="endingOcean" aria-hidden="true"></canvas>
+
+      <div class="ending__quote">
+        <p class="ending__line reveal">The ocean is calm now.</p>
+        <p class="ending__epitaph reveal">“A woman's heart is a deep ocean of secrets.”</p>
+      </div>
+
+      <div class="epilogue" id="epilogue">
+        <figure class="epilogue__media reveal">
+          <img src="assets/deep-secret.jpg" alt="The Heart of the Ocean — a deep blue heart-cut diamond on a silver chain, resting in an aged open palm" loading="lazy" decoding="async" />
+        </figure>
+        <div class="epilogue__body">
+          <span class="epilogue__eyebrow reveal">Epilogue — 84 Years Later</span>
+          <h2 class="epilogue__title reveal">The Heart of the Ocean</h2>
+          <p class="epilogue__text reveal">Cal's engagement gift to Rose was a deep blue diamond cut for a king — worth more, he said, than the ship that carried it. She was wearing it the night Jack drew her; she found it in the pocket of his coat on the deck of the Carpathia, and told no one for eighty-four years.</p>
+          <p class="epilogue__text reveal">In 1985, seventy-three years after the sinking, Robert Ballard's cameras found the real Titanic standing upright in the dark, two and a half miles down — bow dignified, stern in ruin. In the film, an old woman sails out to the discovery, walks to the rail one last night, and lets the diamond fall — back to the ship, back to him.</p>
+          <p class="epilogue__coda reveal">The sea keeps her secrets gently.</p>
+        </div>
+      </div>
+
+      <div class="credits" id="credits" aria-label="Credits">
+        <div class="credits__roll" id="creditsRoll">
+          <p class="credits__title">Titanic</p>
+          <p class="credits__sub">a love story</p>
+
+          <p class="credits__role">Starring</p>
+          <p class="credits__name">Jack Dawson<span>a dreamer from Chippewa Falls</span></p>
+          <p class="credits__name">Rose DeWitt Bukater<span>a soul set free</span></p>
+
+          <p class="credits__role">Featuring</p>
+          <p class="credits__name">R.M.S. Titanic<span>the ship of dreams</span></p>
+          <p class="credits__name">The North Atlantic<span>vast, patient, unknowable</span></p>
+
+          <p class="credits__role">Set in</p>
+          <p class="credits__name">April 1912<span>Southampton to the sea</span></p>
+
+          <p class="credits__role">Crafted with</p>
+          <p class="credits__name">Cormorant Garamond &amp; Jost<span>typography</span></p>
+          <p class="credits__name">GSAP ScrollTrigger<span>motion &amp; the scroll film</span></p>
+          <p class="credits__name">Canvas<span>sea, fog, stars and gold dust</span></p>
+
+          <p class="credits__memorial">In memory of the 1,517 who did not reach the morning.</p>
+          <p class="credits__note">A personal tribute inspired by the 1997 film. Stills © their rightful owners. Not for publication or profit.</p>
+
+          <p class="credits__fin">fin</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
